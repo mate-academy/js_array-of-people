@@ -37,8 +37,23 @@
  *
  * @return {number[]}
  */
-function arrayOfPeople(people) {
-  // write code here
+function arrayOfPeople(people = []) {
+  let uniquePeople = new Set(people);
+  let peopleStayed = new Set();
+  for (let i = 0; i < people.length; i++) {
+    let isInside = false;
+    for (let j = 0; j < people.length; j++) {
+      if (people[i] === people[j] && uniquePeople.has(people[j])) {
+        isInside = !isInside;
+      }
+    }git 
+    if (isInside) {
+      peopleStayed.add(people[i]);
+    }
+
+  }
+  return Array.from(newArray);
 }
+
 
 module.exports = arrayOfPeople;
