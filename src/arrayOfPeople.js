@@ -38,7 +38,20 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  let result = [];
+  let room = new Set();
+  people.forEach(function(i) {
+    if (room.has(i)) {
+      room.delete(i);
+    } else {
+      room.add(i);
+    }
+  });
+
+  room.forEach(function(i) {
+    result.push(i);
+  });
+  return result;
 }
 
 module.exports = arrayOfPeople;
