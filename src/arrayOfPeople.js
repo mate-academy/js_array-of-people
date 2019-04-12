@@ -38,7 +38,16 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  let set = new Set();
+  let array = [];
+  people.forEach(person => {
+    if (!set.has(person)) set.add(person);
+    else set.delete(person);
+  });
+  set.forEach(token => {
+    array.push(token);
+  });
+  return array;
 }
 
 module.exports = arrayOfPeople;
