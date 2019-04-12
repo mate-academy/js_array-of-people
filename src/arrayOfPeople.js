@@ -40,7 +40,7 @@
 function arrayOfPeople(people) {
   const peopleLeft = [];
   people.forEach(element => {
-    if (peopleLeft.includes(element)) {
+    if (~peopleLeft.indexOf(element)) {
       const indexOut = peopleLeft.indexOf(element);
       peopleLeft.splice(indexOut, 1);
     } else {
