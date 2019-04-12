@@ -38,7 +38,15 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  let peopleInside = [];
+  if (people.length) {
+    for (let id of people) {
+      !peopleInside.includes(id)
+        ? peopleInside.push(id)
+        : peopleInside.splice(peopleInside.indexOf(id), 1);
+    }
+  }
+  return peopleInside;
 }
 
 module.exports = arrayOfPeople;
