@@ -39,6 +39,14 @@
  */
 function arrayOfPeople(people) {
   // write code here
+  let result = [];
+
+  people.forEach((person) => {
+    (result.includes(person))
+      ? result.splice(result.indexOf(person), 1)
+      : result.push(person);
+  });
+  return result;
 }
 
 module.exports = arrayOfPeople;
