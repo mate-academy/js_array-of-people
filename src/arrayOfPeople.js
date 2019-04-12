@@ -39,17 +39,12 @@
  */
 function arrayOfPeople(people) {
   let result = [];
-  let room = new Set();
   people.forEach(function(i) {
-    if (room.has(i)) {
-      room.delete(i);
+    if (!result.includes(i)) {
+      result.push(i);
     } else {
-      room.add(i);
+      result.splice(result.indexOf(i), 1);
     }
-  });
-
-  room.forEach(function(i) {
-    result.push(i);
   });
   return result;
 }
