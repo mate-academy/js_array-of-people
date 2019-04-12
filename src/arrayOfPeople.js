@@ -39,13 +39,11 @@
  */
 function arrayOfPeople(people) {
   let peopleInside = [];
-  if (people.length > 0) {
+  if (people.length) {
     for (let id of people) {
-      if (!peopleInside.includes(id)) {
-        peopleInside.push(id);
-      } else {
-        peopleInside.splice(peopleInside.indexOf(id), 1);
-      }
+      !peopleInside.includes(id)
+        ? peopleInside.push(id)
+        : peopleInside.splice(peopleInside.indexOf(id), 1);
     }
   }
   return peopleInside;
