@@ -39,9 +39,8 @@
  */
 function arrayOfPeople(people) {
   const peopleAtTheRoom = [];
-  const queue = [...people];
-  queue.forEach(item => {
-    let pos = peopleAtTheRoom.indexOf(item);
+  people.forEach(item => {
+    const pos = peopleAtTheRoom.indexOf(item);
     if (pos === -1) {
       peopleAtTheRoom.push(item);
     } else {
