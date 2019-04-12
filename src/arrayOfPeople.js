@@ -38,7 +38,6 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const inRoom = [];
   const room = new Set();
   people.forEach((person) => {
     if (!room.has(person)) {
@@ -47,11 +46,7 @@ function arrayOfPeople(people) {
       room.delete(person);
     }
   });
-
-  for (let person of room) {
-    inRoom.push(person);
-  }
-  return inRoom;
+  return [...room];
 }
 
 module.exports = arrayOfPeople;
