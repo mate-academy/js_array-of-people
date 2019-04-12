@@ -39,17 +39,14 @@
  */
 function arrayOfPeople(people) {
   // write code here
-  let currentlyInRoom = [];
+  const currentlyInRoom = [];
 
-  for (let element of people) {
-    (currentlyInRoom.includes(element))
-      ? currentlyInRoom.splice(currentlyInRoom.indexOf(element), 1)
-      : currentlyInRoom.push(element);
-  }
+  people.forEach(function(person) {
+    currentlyInRoom.includes(person)
+      ? currentlyInRoom.splice(currentlyInRoom.indexOf(person), 1)
+      : currentlyInRoom.push(person);
+  });
   return currentlyInRoom;
 }
-
-arrayOfPeople([1, 3, 2, 1, 2, 1]);
-arrayOfPeople([4, 9, 8, 7, 1, 0, 8, 3, 8, 5, 6, 8, 1, 5, 9, 2, 0, 4, 6, 2]);
 
 module.exports = arrayOfPeople;
