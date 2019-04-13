@@ -39,7 +39,7 @@
  */
 function arrayOfPeople(people) {
   // write code here
-  let peopleInRoom = [];
+  const peopleInRoom = [];
   people.forEach((item) => {
     const position = peopleInRoom.indexOf(item);
     if (position === -1) {
