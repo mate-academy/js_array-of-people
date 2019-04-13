@@ -37,19 +37,17 @@
  *
  * @return {number[]}
  */
-function arrayOfPeople(people = []) {
-  const uniquePeople = [];
-  const whoStayed = person => {
-    let newPerson = true;
+function arrayOfPeople(people) {
+  const uniquePeople = people.reduce((uniquePeople, person) => {
+    const positionOfPerson = element => uniquePeople.indexOf(element);
     if (uniquePeople.includes(person)) {
-      uniquePeople.splice(uniquePeople.indexOf(person), 1);
-      newPerson = !newPerson;
-    } else if (uniquePeople.indexOf(person) === -1 && newPerson) {
+      uniquePeople.splice(positionOfPerson(person), 1);
+      return uniquePeople;
+    } else if (positionOfPerson(person) === -1) {
       uniquePeople.push(person);
     }
-  };
-  people.map(whoStayed);
+    return uniquePeople;
+  }, []);
   return uniquePeople;
 }
-
 module.exports = arrayOfPeople;
