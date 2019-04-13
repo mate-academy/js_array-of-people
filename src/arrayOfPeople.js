@@ -40,14 +40,14 @@
 function arrayOfPeople(people) {
   // write code here
   let peopleInRoom = [];
-  for (let i = 0; i < people.length; i++) {
-    if (!peopleInRoom.includes(people[i])) {
-      peopleInRoom.push(people[i]);
+  people.forEach(function(person) {
+    if (!peopleInRoom.includes(person)) {
+      peopleInRoom.push(person);
     } else {
-      let firstEntryId = peopleInRoom.indexOf(people[i], 0);
+      const firstEntryId = peopleInRoom.indexOf(person, 0);
       peopleInRoom.splice(firstEntryId, 1);
     }
-  };
+  });
   return peopleInRoom;
 }
 
