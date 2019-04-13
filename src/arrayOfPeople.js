@@ -42,11 +42,15 @@ function arrayOfPeople(people) {
   let peopleInRoom = [];
 
   people.forEach((elem) => {
-    if (!peopleInRoom.includes(elem)) {
-      peopleInRoom.push(elem);
-    } else {
-      peopleInRoom.splice(peopleInRoom.indexOf(elem), 1);
-    }
+    // if (!peopleInRoom.includes(elem)) {
+    //   peopleInRoom.push(elem);
+    // } else {
+    //   peopleInRoom.splice(peopleInRoom.indexOf(elem), 1);
+    // }
+
+    !peopleInRoom.includes(elem)
+      ? peopleInRoom.push(elem)
+      : peopleInRoom.splice(peopleInRoom.indexOf(elem), 1);
   });
   return peopleInRoom;
 }
