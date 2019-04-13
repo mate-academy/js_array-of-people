@@ -39,6 +39,20 @@
  */
 function arrayOfPeople(people) {
   // write code here
+  let peopleInRoom = [];
+
+  people.forEach((elem) => {
+    // if (!peopleInRoom.includes(elem)) {
+    //   peopleInRoom.push(elem);
+    // } else {
+    //   peopleInRoom.splice(peopleInRoom.indexOf(elem), 1);
+    // }
+
+    !peopleInRoom.includes(elem)
+      ? peopleInRoom.push(elem)
+      : peopleInRoom.splice(peopleInRoom.indexOf(elem), 1);
+  });
+  return peopleInRoom;
 }
 
 module.exports = arrayOfPeople;
