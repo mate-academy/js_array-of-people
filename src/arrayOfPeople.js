@@ -39,6 +39,15 @@
  */
 function arrayOfPeople(people) {
   // write code here
+  const peopleInRoom = [];
+  people.forEach((item) => {
+    const position = peopleInRoom.indexOf(item);
+    if (position === -1) {
+      peopleInRoom.push(item);
+    } else {
+      peopleInRoom.splice(position, 1);
+    }
+  });
+  return peopleInRoom;
 }
-
 module.exports = arrayOfPeople;
