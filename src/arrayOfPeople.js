@@ -40,8 +40,8 @@
 function arrayOfPeople(people) {
   const peopleLeft = [];
   people.forEach(element => {
-    if (~peopleLeft.indexOf(element)) {
-      const indexOut = peopleLeft.indexOf(element);
+    const indexOut = peopleLeft.indexOf(element);
+    if (~indexOut) {
       peopleLeft.splice(indexOut, 1);
     } else {
       peopleLeft.push(element);
