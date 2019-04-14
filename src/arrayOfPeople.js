@@ -55,8 +55,8 @@ function arrayOfPeople(people) {
       arrResult[foundPos] = people[i];
     }
   }
-  return arrResult.filter(function(el) {
-    return el != null;
+  return arrResult.filter(function(elem) {
+    return elem != null;
   });
 }
 module.exports = arrayOfPeople;
