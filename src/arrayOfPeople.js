@@ -39,10 +39,9 @@
  */
 function arrayOfPeople(people) {
   const peopleInRoom = [];
-  people.forEach(men =>
-    peopleInRoom.includes(men)
-      ? peopleInRoom.splice(peopleInRoom.indexOf(men), 1)
-      : peopleInRoom.push(men)
+  people.forEach(men => peopleInRoom.indexOf(men) !== -1
+    ? peopleInRoom.splice(peopleInRoom.indexOf(men), 1)
+    : peopleInRoom.push(men)
   );
   return peopleInRoom;
 }
