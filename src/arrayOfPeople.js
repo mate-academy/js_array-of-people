@@ -40,7 +40,7 @@
 
 function arrayOfPeople(people) {
   let arr = [];
-  people.map((el) => {
+  people.filter((el) => {
     return arr.includes(el) ? arr.splice(arr.indexOf(el), 1) : arr.push(el);
   });
   return arr;
