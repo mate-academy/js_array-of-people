@@ -40,13 +40,13 @@
 function arrayOfPeople(people) {
   let newPeopleInRoom = [];
 
-  people.forEach((e) => {
-    if (!newPeopleInRoom.includes(e)) {
-      newPeopleInRoom.push(e);
+  for (let i = 0; i < people.length; i++) {
+    if (newPeopleInRoom.includes(people[i])) {
+      newPeopleInRoom.splice(newPeopleInRoom.indexOf(people[i]), 1);
     } else {
-      newPeopleInRoom.splice(newPeopleInRoom.indexOf(e), 1);
+      newPeopleInRoom.push(people[i]);
     }
-  });
+  };
   return newPeopleInRoom;
 }
 
