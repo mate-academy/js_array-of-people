@@ -37,16 +37,16 @@
  *
  * @return {number[]}
  */
+
 function arrayOfPeople(people) {
-  const uniquePeople = people.reduce((uniquePeople, person) => {
-    const positionOfPerson = element => uniquePeople.indexOf(element);
-    if (uniquePeople.includes(person)) {
-      uniquePeople.splice(positionOfPerson(person), 1);
-      return uniquePeople;
-    } else if (positionOfPerson(person) === -1) {
-      uniquePeople.push(person);
+  const uniquePeople = people.reduce((arrayOfPeople, person) => {
+    if (arrayOfPeople.includes(person)) {
+      arrayOfPeople.splice(arrayOfPeople.indexOf(person), 1);
+      return arrayOfPeople;
+    } else if (arrayOfPeople.indexOf(person) === -1) {
+      arrayOfPeople.push(person);
     }
-    return uniquePeople;
+    return arrayOfPeople;
   }, []);
   return uniquePeople;
 }
