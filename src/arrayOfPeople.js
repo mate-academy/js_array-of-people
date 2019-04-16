@@ -41,18 +41,9 @@ function arrayOfPeople(people) {
   let arrResult = [];
   for (let i = 0; i < people.length; i++) {
     if (arrResult.indexOf(people[i]) !== -1) {
-      continue;
-    }
-    let numberEntries = 0;
-    let positionSimbol = 0;
-    let foundPos = 0;
-    while (people.indexOf(people[i], positionSimbol) !== -1) {
-      foundPos = people.indexOf(people[i], positionSimbol);
-      positionSimbol = foundPos + 1;
-      numberEntries++;
-    }
-    if ((numberEntries % 2) !== 0) {
-      arrResult[foundPos] = people[i];
+      delete arrResult[arrResult.indexOf(people[i])];
+    } else {
+      arrResult[i] = people[i];
     }
   }
   return arrResult.filter(function(element) {
