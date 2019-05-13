@@ -38,10 +38,11 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  return people.reverse()
-    .filter((person, i, array) =>
-      array.filter(elem => elem === person).length % 2 !== 0
-      && people.indexOf(person) === i).reverse();
+  const peopleArr = [];
+  people.forEach(person => peopleArr.includes(person) ? 
+                peopleArr.splice(peopleArr.indexOf(person), 1) :
+                peopleArr.push(person));
+  return peopleArr;
 }
 
 module.exports = arrayOfPeople;
