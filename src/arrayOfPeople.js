@@ -39,9 +39,11 @@
  */
 function arrayOfPeople(people) {
   const peopleArr = [];
+  
   people.forEach(person => {
     const index = peopleArr.indexOf(person);
-    return peopleArr.includes(person) 
+    
+    return index > -1
       ? peopleArr.splice(index, 1) 
       : peopleArr.push(person);
     }
