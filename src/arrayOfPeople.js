@@ -39,6 +39,38 @@
  */
 function arrayOfPeople(people) {
   // write code here
-}
+  const peopleInRoom = [];
+  const peopleInRoomClean = [];
 
+  const howManyMutch = (item, index, arr) => {
+    let counter = 0;
+    for (let itemLoop of arr) {
+      if (itemLoop === item) {
+        counter ++;
+      }
+    }
+    return counter;
+  }
+
+  const timesPathInRoom = people.map(howManyMutch);
+  console.log(timesPathInRoom);
+
+  for (let i = 0; i < timesPathInRoom.length; i++) {
+    if (timesPathInRoom[i] % 2 !== 0) {
+      peopleInRoom.push(people[i])
+    }
+  }
+
+  console.log(peopleInRoom);
+
+  for (let human of peopleInRoom) {
+    if (!peopleInRoomClean.includes(human)) {
+      peopleInRoomClean.push(human);
+    }
+  }
+
+  return peopleInRoomClean;
+}
 module.exports = arrayOfPeople;
+
+console.log(arrayOfPeople([1, 3,2,1,2,1]));
