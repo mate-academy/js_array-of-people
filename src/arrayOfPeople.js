@@ -40,11 +40,11 @@
 const arrayOfPeople = (people) => {
   const listOfPeople = [];
 
-  for (let i = 0; i < people.length; i++) {
-    if (!listOfPeople.includes(people[i])) {
-      listOfPeople.push(people[i]);
+  for (const person of people) {
+    if (!listOfPeople.includes(person)) {
+      listOfPeople.push(person);
     } else {
-      listOfPeople.splice(listOfPeople.indexOf(people[i]), 1);
+      listOfPeople.splice(listOfPeople.indexOf(person), 1);
     }
   }
 
