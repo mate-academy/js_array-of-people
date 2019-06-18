@@ -38,6 +38,18 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
+  const result = [];
+  let counter = 0;
+  for (const i in people) {
+    counter = result.indexOf(people[i]);
+    if (counter > -1) {
+      result.splice(counter, 1);
+    } else {
+      result.push(people[i]);
+    }
+  }
+  return result;
+
   // write code here
 }
 
