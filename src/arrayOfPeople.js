@@ -40,6 +40,7 @@
 function arrayOfPeople(people) {
   // write code here
   const room = [];
+
   for (let i = 0; i < people.length; i++) {
     const present = room.indexOf(people[i]);
     if (people[i] && present < 0) {
@@ -48,6 +49,7 @@ function arrayOfPeople(people) {
       room.splice(present, 1);
     }
   }
+
   return room;
 }
 
