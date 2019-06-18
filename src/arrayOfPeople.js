@@ -41,10 +41,11 @@ function arrayOfPeople(people) {
   // write code here
   const room = [];
   for (let i = 0; i < people.length; i++) {
-    if (people[i] && room.indexOf(people[i]) < 0) {
+    const present = room.indexOf(people[i]);
+    if (people[i] && present < 0) {
       room.push(people[i]);
-    } else if (room.indexOf(people[i]) > -1) {
-      room.splice(room.indexOf(people[i]), 1);
+    } else if (present > -1) {
+      room.splice(present, 1);
     }
   }
   return room;
