@@ -38,16 +38,16 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const startArray = [...people];
   const resultArray = [];
 
-  startArray.forEach((a) => {
-    if (resultArray.includes(a)) {
-      resultArray.splice(resultArray.indexOf(a), 1);
+  for (const item of people) {
+    const index = resultArray.indexOf(item);
+    if (~index) {
+      resultArray.splice(index, 1);
     } else {
-      resultArray.push(a);
+      resultArray.push(item);
     }
-  });
+  }
   return resultArray;
 }
 
