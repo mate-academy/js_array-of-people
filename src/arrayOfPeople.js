@@ -38,14 +38,14 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const newArr = [...people];
   const whoInTheRoom = [];
 
-  for (let i = 0; i < newArr.length; i++) {
-    if (!whoInTheRoom.includes(newArr[i])) {
-      whoInTheRoom.push(newArr[i]);
+  for (const word of people) {
+    const indexPeople = whoInTheRoom.indexOf(word);
+    if (indexPeople !== -1) {
+      whoInTheRoom.splice(indexPeople, 1);
     } else {
-      whoInTheRoom.splice(whoInTheRoom.indexOf(newArr[i]), 1);
+      whoInTheRoom.push(word);
     }
   }
 
