@@ -41,15 +41,13 @@
 function arrayOfPeople(people) {
   const peopleInflatNow = [];
   for (const current of people) {
+    const indexLetter = peopleInflatNow.indexOf(current);
     if (peopleInflatNow.includes(current)) {
-      const indexLetter = peopleInflatNow.indexOf(current);
       peopleInflatNow.splice(indexLetter, 1);
-      console.log(indexLetter);
     } else {
       peopleInflatNow.push(current);
     }
   }
-  console.log(peopleInflatNow);
   return peopleInflatNow;
 }
 
