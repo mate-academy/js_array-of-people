@@ -42,7 +42,7 @@ function arrayOfPeople(people) {
 
   for (const item of people) {
     const index = resultArray.indexOf(item);
-    if (~index) {
+    if (index !== -1) {
       resultArray.splice(index, 1);
     } else {
       resultArray.push(item);
