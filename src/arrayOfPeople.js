@@ -38,19 +38,19 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  if (people.length === 0 || people.length === 1) {
+  if (people.length <= 1) {
     return people;
   }
-  const number = [];
-  for (const i in people) {
-    const index = number.indexOf(people[i]);
-    if (number.includes(people[i])) {
-      number.splice(index, 1);
+  const peopleNumber = [];
+  people.forEach((person, i) => {
+    const peopleIn = peopleNumber.indexOf(people[i]);
+    if (peopleIn < 0) {
+      peopleNumber.push(people[i]);
     } else {
-      number.push(people[i]);
+      peopleNumber.splice(peopleIn, 1);
     }
-  }
-  return number;
+  });
+  return peopleNumber;
 }
 
 module.exports = arrayOfPeople;
