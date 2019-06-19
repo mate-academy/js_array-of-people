@@ -39,8 +39,7 @@
 const arrayOfPeople = (people) => {
   const peopleInside = [];
   people.forEach((elem, i) => {
-    let presence = 0;
-    presence = peopleInside.indexOf(people[i]);
+    const presence = peopleInside.indexOf(people[i]);
     if (presence === -1) {
       peopleInside.push(people[i]);
     } else {
