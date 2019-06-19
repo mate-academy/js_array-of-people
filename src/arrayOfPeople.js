@@ -40,14 +40,16 @@
 
 function arrayOfPeople(people) {
   const peopleInflatNow = [];
-  for (const i in people) {
-    if (peopleInflatNow.includes(people[i])) {
-      console.log(i);
-      peopleInflatNow.splice(peopleInflatNow.indexOf(people[i]), 1);
+  for (const current of people) {
+    if (peopleInflatNow.includes(current)) {
+      const indexLetter = peopleInflatNow.indexOf(current);
+      peopleInflatNow.splice(indexLetter, 1);
+      console.log(indexLetter);
     } else {
-      peopleInflatNow.push(people[i]);
+      peopleInflatNow.push(current);
     }
   }
+  console.log(peopleInflatNow);
   return peopleInflatNow;
 }
 
