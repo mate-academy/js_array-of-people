@@ -39,11 +39,13 @@
  */
 function arrayOfPeople(people) {
   const room = [];
-  people.forEach(function(man) {
-    if (room.indexOf(man) === -1) {
+  let indexOfMan = 0;
+  people.forEach((man) => {
+    indexOfMan = room.indexOf(man);
+    if (indexOfMan === -1) {
       room.push(man);
     } else {
-      room.splice(room.indexOf(man), 1);
+      room.splice(indexOfMan, 1);
     }
   });
   return room;
