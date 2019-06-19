@@ -39,12 +39,12 @@
  */
 function arrayOfPeople(people) {
   const personsInRoom = [];
-  for (const i of people) {
-    const index = personsInRoom.indexOf(i);
-    if (personsInRoom.includes(i)) {
+  for (const person of people) {
+    const index = personsInRoom.indexOf(person);
+    if (personsInRoom.includes(person)) {
       personsInRoom.splice(index, 1);
     } else {
-      personsInRoom.push(i);
+      personsInRoom.push(person);
     }
   }
   return personsInRoom;
