@@ -41,8 +41,9 @@ function arrayOfPeople(people) {
   const inHouse = [];
 
   people.forEach(human => {
+    const itemLocation = inHouse.indexOf(human);
     if (inHouse.includes(human)) {
-      inHouse.splice(inHouse.indexOf(human), 1);
+      inHouse.splice(itemLocation, 1);
     } else {
       inHouse.push(human);
     }
