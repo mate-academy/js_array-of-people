@@ -42,10 +42,10 @@ function arrayOfPeople(people) {
   const peopleInflatNow = [];
 
   for (const current of people) {
-    const indexLetter = peopleInflatNow.indexOf(current);
+    const index = peopleInflatNow.indexOf(current);
 
-    if (indexLetter !== -1) {
-      peopleInflatNow.splice(indexLetter, 1);
+    if (index !== -1) {
+      peopleInflatNow.splice(index, 1);
     } else {
       peopleInflatNow.push(current);
     }
