@@ -41,10 +41,12 @@ const arrayOfPeople = (people) => {
   const listOfPeople = [];
 
   for (const person of people) {
-    if (!listOfPeople.includes(person)) {
+    const orderNumber = listOfPeople.indexOf(person);
+
+    if (orderNumber === -1) {
       listOfPeople.push(person);
     } else {
-      listOfPeople.splice(listOfPeople.indexOf(person), 1);
+      listOfPeople.splice(orderNumber, 1);
     }
   }
 
