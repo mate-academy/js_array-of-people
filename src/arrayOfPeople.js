@@ -43,13 +43,13 @@ function arrayOfPeople(people) {
   }
   const number = [];
   for (const i in people) {
+    const index = number.indexOf(people[i]);
     if (number.includes(people[i])) {
-      number.splice(number.indexOf(people[i]), 1);
+      number.splice(index, 1);
     } else {
       number.push(people[i]);
     }
   }
-  console.log(number);
   return number;
 }
 
