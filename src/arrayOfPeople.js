@@ -40,14 +40,17 @@
 
 function arrayOfPeople(people) {
   const peopleInflatNow = [];
+
   for (const current of people) {
     const indexLetter = peopleInflatNow.indexOf(current);
-    if (peopleInflatNow.includes(current)) {
+
+    if (indexLetter !== -1) {
       peopleInflatNow.splice(indexLetter, 1);
     } else {
       peopleInflatNow.push(current);
     }
   }
+
   return peopleInflatNow;
 }
 
