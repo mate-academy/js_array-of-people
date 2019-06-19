@@ -38,39 +38,18 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
-  const peopleInRoom = [];
-  const peopleInRoomClean = [];
-
-  const howManyMutch = (item, index, arr) => {
-    let counter = 0;
-    for (let itemLoop of arr) {
-      if (itemLoop === item) {
-        counter ++;
-      }
-    }
-    return counter;
-  }
-
-  const timesPathInRoom = people.map(howManyMutch);
-  console.log(timesPathInRoom);
-
-  for (let i = 0; i < timesPathInRoom.length; i++) {
-    if (timesPathInRoom[i] % 2 !== 0) {
-      peopleInRoom.push(people[i])
+  let newArr = [ ...people ];
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr.indexOf(newArr[i], i + 1) >= 0) {
+      newArr.splice((newArr.indexOf(newArr[i], i + 1)), 1, 'x');
+      newArr.splice(i, 1, 'x');
     }
   }
 
-  console.log(peopleInRoom);
+  newArr = newArr.filter(item => item !== 'x');
 
-  for (let human of peopleInRoom) {
-    if (!peopleInRoomClean.includes(human)) {
-      peopleInRoomClean.push(human);
-    }
-  }
-
-  return peopleInRoomClean;
+  return newArr;
 }
 module.exports = arrayOfPeople;
 
-console.log(arrayOfPeople([1, 3,2,1,2,1]));
+// console.log(arrayOfPeople([11, 11, 11, 11,]));
