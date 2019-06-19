@@ -41,16 +41,16 @@ function arrayOfPeople(people) {
   if (people.length <= 1) {
     return people;
   }
-  const peopleNumber = [];
+  const peopleInHouse = [];
   people.forEach((person, i) => {
-    const peopleIn = peopleNumber.indexOf(people[i]);
+    const peopleIn = peopleInHouse.indexOf(people[i]);
     if (peopleIn < 0) {
-      peopleNumber.push(people[i]);
+      peopleInHouse.push(people[i]);
     } else {
-      peopleNumber.splice(peopleIn, 1);
+      peopleInHouse.splice(peopleIn, 1);
     }
   });
-  return peopleNumber;
+  return peopleInHouse;
 }
 
 module.exports = arrayOfPeople;
