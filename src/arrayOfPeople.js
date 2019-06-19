@@ -42,7 +42,8 @@ function arrayOfPeople(people) {
   const peopleInRoom = [];
   for (let i = 0; i < people.length; i++) {
     if (peopleInRoom.includes(people[i])) {
-      peopleInRoom.splice(peopleInRoom.indexOf(people[i]), 1);
+      const indexOfPeopleInRoom = peopleInRoom.indexOf(people[i]);
+      peopleInRoom.splice(indexOfPeopleInRoom, 1);
     } else {
       peopleInRoom.push(people[i]);
     };
