@@ -37,8 +37,20 @@
  *
  * @return {number[]}
  */
-function arrayOfPeople(people) {
-  // write code here
-}
+const arrayOfPeople = (people) => {
+  const listOfPeople = [];
+
+  for (const person of people) {
+    const orderNumber = listOfPeople.indexOf(person);
+
+    if (orderNumber === -1) {
+      listOfPeople.push(person);
+    } else {
+      listOfPeople.splice(orderNumber, 1);
+    }
+  }
+
+  return listOfPeople;
+};
 
 module.exports = arrayOfPeople;
