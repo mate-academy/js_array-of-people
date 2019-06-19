@@ -40,8 +40,9 @@
 function arrayOfPeople(people) {
   const result = [];
   function inRoom(person) {
+    const index = result.indexOf(person);
     if (result.includes(person)) {
-      return result.splice(result.indexOf(person), 1);
+      return result.splice(index, 1);
     }
     return result.push(person);
   }
