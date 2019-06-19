@@ -39,12 +39,13 @@
  */
 function arrayOfPeople(people) {
   // write code here
+
   const arrayOfRoom = [];
-  for (const i in people) {
-    if (arrayOfRoom.includes(people[i])) {
-      arrayOfRoom.splice(arrayOfRoom.indexOf(people[i]), 1);
+  for (const value of people) {
+    if (arrayOfRoom.indexOf(value) !== -1) {
+      arrayOfRoom.splice(arrayOfRoom.indexOf(value), 1);
     } else {
-      arrayOfRoom.push(people[i]);
+      arrayOfRoom.push(value);
     }
   }
   return arrayOfRoom;
