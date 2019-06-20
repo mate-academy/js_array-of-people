@@ -42,8 +42,9 @@ function arrayOfPeople(people) {
 
   const arrayOfRoom = [];
   for (const value of people) {
-    if (arrayOfRoom.indexOf(value) !== -1) {
-      arrayOfRoom.splice(arrayOfRoom.indexOf(value), 1);
+    const man = arrayOfRoom.indexOf(value);
+    if (man !== -1) {
+      arrayOfRoom.splice(man, 1);
     } else {
       arrayOfRoom.push(value);
     }
