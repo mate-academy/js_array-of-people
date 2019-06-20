@@ -42,20 +42,29 @@ function arrayOfPeople(people) {
   const inRoom = [];
 
   people.forEach((person) => {
-    inRoom.includes(person)
-      ? inRoom.splice(inRoom.indexOf(person), 1)
-      : inRoom.push(person);
-  });
+    const placeOfElement = inRoom.indexOf(person);
 
-  return inRoom;
+    if (placeOfElement >= 0) {
+      inRoom.splice(placeOfElement, 1);
+    } else {
+      inRoom.push(person);
+    }
+  });
+  // old for
   /* for (let i = 0; i < people.length; i++) {
     if (inRoom.includes(people[i])) {
       inRoom.splice(inRoom.indexOf(people[i]), 1);
     } else {
     inRoom.push(people[i]);
     }
-  }
-  return inRoom; */
+  } */
+
+  // old ternary operator
+  /* inRoom.includes(person)
+      ? inRoom.splice(inRoom.indexOf(person), 1)
+      : inRoom.push(person);
+  }); */
+  return inRoom;
 }
 
 // arrayOfPeople([23, 23, 23]))
