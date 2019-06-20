@@ -38,17 +38,17 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const inHouse = [];
+  const humanInRoom = [];
 
-  people.forEach(human => {
-    const itemLocation = inHouse.indexOf(human);
-    if (inHouse.includes(human)) {
-      inHouse.splice(itemLocation, 1);
+  people.forEach((human) => {
+    const index = humanInRoom.indexOf(human);
+    if (index >= 0) {
+      humanInRoom.splice(index, 1);
     } else {
-      inHouse.push(human);
+      humanInRoom.push(human);
     }
   });
-  return inHouse;
+  return humanInRoom;
 }
 
 module.exports = arrayOfPeople;
