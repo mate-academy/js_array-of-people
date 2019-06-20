@@ -38,17 +38,16 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const room = [];
-
+  const peopleCurrentlyInRoom = [];
   for (let i = 0; i < people.length; i++) {
-    const position = room.indexOf(people[i]);
+    const position = peopleCurrentlyInRoom.indexOf(people[i]);
     if (position !== -1) {
-      room.splice(position, 1);
+      peopleCurrentlyInRoom.splice(position, 1);
     } else {
-      room.push(people[i]);
+      peopleCurrentlyInRoom.push(people[i]);
     }
   }
-  return room;
+  return peopleCurrentlyInRoom;
 }
 
 module.exports = arrayOfPeople;
