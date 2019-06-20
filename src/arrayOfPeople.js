@@ -50,20 +50,6 @@ function arrayOfPeople(people) {
       inRoom.push(person);
     }
   });
-  // old for
-  /* for (let i = 0; i < people.length; i++) {
-    if (inRoom.includes(people[i])) {
-      inRoom.splice(inRoom.indexOf(people[i]), 1);
-    } else {
-    inRoom.push(people[i]);
-    }
-  } */
-
-  // old ternary operator
-  /* inRoom.includes(person)
-      ? inRoom.splice(inRoom.indexOf(person), 1)
-      : inRoom.push(person);
-  }); */
   return inRoom;
 }
 
