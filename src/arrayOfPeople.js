@@ -38,7 +38,16 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  const peopleInRoomNonUnique = [];
+
+  for (let i = 0; i < people.length; i++) {
+    if (people.filter(elem => elem === people[i]).length % 2 === 1) {
+      peopleInRoomNonUnique.push(people[i]);
+    }
+  }
+
+  return peopleInRoomNonUnique
+    .filter((el, index) => index === peopleInRoomNonUnique.lastIndexOf(el));
 }
 
 module.exports = arrayOfPeople;
