@@ -38,16 +38,15 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const peopleInRoomNonUnique = [];
+  const peopleInRoom = [];
 
   for (let i = 0; i < people.length; i++) {
-    if (people.filter(elem => elem === people[i]).length % 2 === 1) {
-      peopleInRoomNonUnique.push(people[i]);
-    }
+    !peopleInRoom.includes(people[i])
+      ? peopleInRoom.push(people[i])
+      : peopleInRoom.splice(peopleInRoom.indexOf(people[i]), 1);
   }
 
-  return peopleInRoomNonUnique
-    .filter((el, index) => index === peopleInRoomNonUnique.lastIndexOf(el));
+  return peopleInRoom;
 }
 
 module.exports = arrayOfPeople;
