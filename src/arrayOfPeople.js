@@ -38,11 +38,16 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  return [...new Set(people.reverse())]
-    .reverse()
-    .filter(person => people
-      .reduce((counter, item) =>
-        item === person ? counter + 1 : counter, 0) % 2);
+  const t = [];
+
+  for (let i = people.length - 1; i >= 0; i--) {
+    if (!t.includes(people[i])
+      && people.reduce((s, item) => people[i] === item ? s + 1 : s, 0) % 2) {
+      t.push(people[i]);
+    }
+  }
+
+  return t.reverse();
 }
 
 module.exports = arrayOfPeople;
