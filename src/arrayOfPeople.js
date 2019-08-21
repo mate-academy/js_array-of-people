@@ -38,7 +38,30 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  const set = new Set(people);
+  const peopleInRoom = [];
+
+  set.forEach(person => {
+    let counter = 0;
+
+    for (let pos = 0; pos < people.length;) {
+      const foundPos = people.indexOf(person, pos);
+
+      if (foundPos === -1) {
+        break;
+      }
+
+      pos = foundPos + 1;
+      counter++;
+    }
+
+    if (counter % 2 !== 0) {
+      peopleInRoom.push(person);
+    }
+  });
+
+  return peopleInRoom
+    .sort((a, b) => people.lastIndexOf(a) - people.lastIndexOf(b));
 }
 
 module.exports = arrayOfPeople;
