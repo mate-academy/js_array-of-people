@@ -38,10 +38,10 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  return people.reduce((resultArr, item) => {
-    const fondIndex = resultArr.indexOf(item);
+  return people.reduce((resultArr, person) => {
+    const fondIndex = resultArr.indexOf(person);
     if (fondIndex === -1) {
-      resultArr.push(item);
+      resultArr.push(person);
     } else {
       resultArr.splice(fondIndex, 1);
     }
