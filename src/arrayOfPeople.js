@@ -38,16 +38,20 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const reverseArrayOfPeople = [];
+  const presentPeople = [...people];
 
-  for (let i = people.length - 1; i >= 0; i--) {
-    if (!reverseArrayOfPeople.includes(people[i])
-      && people.reduce((s, item) => people[i] === item ? s + 1 : s, 0) % 2) {
-      reverseArrayOfPeople.push(people[i]);
+  let i = 0;
+  while (i < presentPeople.length) {
+    const couple = presentPeople.indexOf(presentPeople[i], i + 1);
+    if (couple > 0) {
+      presentPeople.splice(couple, 1);
+      presentPeople.splice(i, 1);
+    } else {
+      i++;
     }
   }
 
-  return reverseArrayOfPeople.reverse();
+  return presentPeople;
 }
 
 module.exports = arrayOfPeople;
