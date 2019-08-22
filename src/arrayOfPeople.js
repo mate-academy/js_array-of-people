@@ -1,21 +1,17 @@
 'use strict';
 
 function arrayOfPeople(people) {
-  const onlyOdd = [];
-  const onlyUnique = [];
+  const uniqueOdd = [];
 
   people.forEach(el => {
-    let count = 0; people.forEach(compareEl => {
-      if (el === compareEl) { count++; };
-    });
-    if (count % 2 !== 0) { onlyOdd.unshift(el); }
+    if (uniqueOdd.indexOf(el) === -1) {
+      uniqueOdd.push(el);
+    } else {
+      uniqueOdd.splice(uniqueOdd.indexOf(el), 1);
+    }
   });
 
-  onlyOdd.forEach(el => {
-    if (onlyUnique.indexOf(el) === -1) { onlyUnique.push(el); }
-  });
-
-  return onlyUnique.reverse();
+  return uniqueOdd;
 }
 
 module.exports = arrayOfPeople;
