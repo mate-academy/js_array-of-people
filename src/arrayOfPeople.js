@@ -38,15 +38,17 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const uniquePeople = [];
-  people.forEach(item => {
-    if (uniquePeople.indexOf(item) < 0) {
-      uniquePeople.push(item);
+  const uniquePeoples = new Set();
+
+  for (let i = 0; i < people.length; i++) {
+    if (uniquePeoples.has(people[i])) {
+      uniquePeoples.delete(people[i]);
     } else {
-      uniquePeople.splice(uniquePeople.indexOf(item), 1);
+      uniquePeoples.add(people[i]);
     }
-  });
-  return uniquePeople;
+  }
+
+  return [...uniquePeoples];
 }
 
 module.exports = arrayOfPeople;
