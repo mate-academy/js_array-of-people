@@ -38,32 +38,11 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const set = new Set(people);
-  let key = 0;
-  const map = new Map();
-  const peopleInRoom = [];
-  let inOut = 0;
-
-  for (const value of set) {
-    for (let i = 0; i < people.length; i++) {
-      if (value === people[i]) {
-        inOut++;
-        people[i] = '';
-        key = i;
-      }
-    }
-    if (inOut % 2 !== 0) {
-      map.set(key, value);
-    }
-    inOut = 0;
-  }
-
-  const mapSort = new Map([...map.entries()].sort((a, b) => a[0] - b[0]));
-
-  for (const men of mapSort.values()) {
-    peopleInRoom.push(men);
-  }
-
+  const peopleInRoom = new Set();
+  people.forEach((inOut) =>
+    peopleInRoom.has(inOut)
+      ? peopleInRoom.delete(inOut)
+      : peopleInRoom.add(inOut));
   return peopleInRoom;
 }
 module.exports = arrayOfPeople;
