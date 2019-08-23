@@ -40,7 +40,7 @@
 function arrayOfPeople(people) {
   const peopleInRoom = [];
 
-  people.forEach(function(item, i) {
+  people.forEach(item => {
     if (peopleInRoom.indexOf(item) === -1) {
       peopleInRoom.push(item);
     } else {
