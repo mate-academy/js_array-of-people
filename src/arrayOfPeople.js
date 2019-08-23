@@ -43,6 +43,6 @@ function arrayOfPeople(people) {
     peopleInRoom.has(inOut)
       ? peopleInRoom.delete(inOut)
       : peopleInRoom.add(inOut));
-  return peopleInRoom;
+  return [...peopleInRoom];
 }
 module.exports = arrayOfPeople;
