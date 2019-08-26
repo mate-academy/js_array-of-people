@@ -40,10 +40,10 @@
 function arrayOfPeople(people) {
   const peopleArr = [];
 
-  people.forEach((item) => {
-    !peopleArr.includes(item)
-      ? peopleArr.push(item)
-      : peopleArr.splice(peopleArr.indexOf(item), 1);
+  people.forEach((person) => {
+    !peopleArr.includes(person)
+      ? peopleArr.push(person)
+      : peopleArr.splice(peopleArr.indexOf(person), 1);
   });
 
   return peopleArr;
