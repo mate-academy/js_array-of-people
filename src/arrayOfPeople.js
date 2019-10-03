@@ -38,7 +38,16 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  const personInRoom = new Map();
+
+  for (const i in people) {
+    if (personInRoom.has(people[i])) {
+      personInRoom.delete(people[i]);
+    } else {
+      personInRoom.set(people[i]);
+    }
+  }
+  return Array.from(personInRoom.keys());
 }
 
 module.exports = arrayOfPeople;
