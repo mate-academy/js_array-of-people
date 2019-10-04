@@ -38,17 +38,17 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const result = new Set();
+  const result = [];
 
-  for (const n of people) {
-    if (result.has(n)) {
-      result.delete(n);
+  people.forEach(n => {
+    if (result.includes(n)) {
+      result.splice(result.indexOf(n), 1);
     } else {
-      result.add(n);
+      result.push(n);
     }
-  }
+  });
 
-  return [...result];
+  return result;
 }
 
 module.exports = arrayOfPeople;
