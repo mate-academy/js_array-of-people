@@ -47,6 +47,7 @@ function arrayOfPeople(people) {
       room.add(person);
     }
   });
+
   return [...room];
 }
 
