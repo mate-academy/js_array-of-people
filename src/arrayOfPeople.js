@@ -39,9 +39,13 @@
  */
 function arrayOfPeople(people) {
   const room = [];
-  people.forEach(person => room.includes(person)
-    ? room.splice(room.indexOf(person), 1)
-    : room.push(person));
+  for (const person of people) {
+    if (room.includes(person)) {
+      room.splice(room.indexOf(person), 1);
+    } else {
+      room.push(person);
+    }
+  }
   return room;
 }
 
