@@ -39,13 +39,11 @@
  */
 function arrayOfPeople(people) {
   const arr = [];
-  if (people.length === 0) {
-    return arr;
-  }
-  arr.push(people[0]);
-  for (let i = 1; i < people.length; i++) {
-    if (arr.indexOf(people[i]) > -1) {
-      arr.splice(arr.indexOf(people[i]), 1);
+  let index;
+  for (let i = 0; i < people.length; i++) {
+    index = arr.indexOf(people[i]);
+    if (index > -1) {
+      arr.splice(index, 1);
     } else {
       arr.push(people[i]);
     }
