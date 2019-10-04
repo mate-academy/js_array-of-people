@@ -38,16 +38,16 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const personInRoom = new Map();
+  const personInRoom = [];
 
-  for (const i in people) {
-    if (personInRoom.has(people[i])) {
-      personInRoom.delete(people[i]);
+  for (let i = 0; i < people.length; i++) {
+    if (personInRoom.indexOf(people[i]) !== -1) {
+      personInRoom.splice(personInRoom.indexOf(people[i]), 1);
     } else {
-      personInRoom.set(people[i]);
+      personInRoom.push(people[i]);
     }
   }
-  return Array.from(personInRoom.keys());
+  return personInRoom;
 }
 
 module.exports = arrayOfPeople;
