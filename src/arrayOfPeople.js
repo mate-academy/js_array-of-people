@@ -43,7 +43,7 @@ function arrayOfPeople(people) {
   for (let i = 0; i < people.length; i++) {
     if (!room.includes(people[i])) {
       room.push(people[i]);
-    } else if (room.includes(people[i])) {
+    } else {
       room.splice(room.indexOf(people[i]), 1);
     }
   }
