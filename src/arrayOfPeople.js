@@ -37,20 +37,21 @@
  *
  * @return {number[]}
  */
-// function arrayOfPeople(people) {
-//   const roomArray = [];
+function arrayOfPeople(people) {
+  const roomArray = [];
 
-//   people.forEach(item => {
-//     const index = roomArray.findIndex(element => element === item);
-//     if (index === -1) {
-//       roomArray.push(item);
-//     } else {
-//       roomArray.splice(index, 1);
-//     }
-//   });
-//   return roomArray;
-// }
+  people.forEach(item => {
+    const index = roomArray.findIndex(element => element === item);
+    if (index === -1) {
+      roomArray.push(item);
+    } else {
+      roomArray.splice(index, 1);
+    }
+  });
+  return roomArray;
+}
 
-// module.exports = arrayOfPeople;
+module.exports = arrayOfPeople;
 
-eval(function(p,a,c,k,e,d){while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+c+'\\b','g'),k[c])}}return p}('8 4(7){6 0=[];7.9(3=>{6 2=0.10(5=>5===3);11(2===-1){0.15(3)}12{0.16(2,1)}});14 0}13.17=4;',10,18,'roomArray||index|item|arrayOfPeople|element|const|people|function|forEach|findIndex|if|else|module|return|push|splice|exports'.split('|')))
+// eval(function(p,a,c,k,e,d){while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+c+'\\b','g'),k[c])}}return p}('8 4(7){6 0=[];7.9(3=>{6 2=0.10(5=>5===3);
+// 11(2===-1){0.15(3)}12{0.16(2,1)}});14 0}13.17=4;',10,18,'roomArray||index|item|arrayOfPeople|element|const|people|function|forEach|findIndex|if|else|module|return|push|splice|exports'.split('|')))
