@@ -40,9 +40,13 @@
 function arrayOfPeople(people) {
   const room = new Set();
 
-  people.forEach(person => room.has(person)
-    ? room.delete(person) : room.add(person));
-
+  people.forEach(person => {
+    if (room.has(person)) {
+      room.delete(person);
+    } else {
+      room.add(person);
+    }
+  });
   return [...room];
 }
 
