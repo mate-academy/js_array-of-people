@@ -38,20 +38,16 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const set = new Set();
-  const resultArr = [];
+  const arr = [];
 
   for (const item of people) {
-    if (set.has(item)) {
-      set.delete(item);
+    if (arr.includes(item)) {
+      arr.splice(arr.indexOf(item), 1);
     } else {
-      set.add(item);
+      arr.push(item);
     }
   }
-  for (const item of set) {
-    resultArr.push(item);
-  }
-  return resultArr;
+  return arr;
 }
 
 module.exports = arrayOfPeople;
