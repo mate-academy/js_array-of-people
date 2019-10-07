@@ -39,13 +39,16 @@
  */
 function arrayOfPeople(people) {
   const inRoom = [];
-  for (const unit of people) {
-    if (inRoom.includes(unit)) {
-      inRoom.splice(inRoom.indexOf(unit), 1);
+
+  for (let i = 0; i < people.length; i++) {
+    const posInRoom = inRoom.indexOf(people[i]);
+    if (posInRoom === -1) {
+      inRoom.push(people[i]);
     } else {
-      inRoom.push(unit);
+      inRoom.splice(posInRoom, 1);
     }
   }
+
   return inRoom;
 }
 
