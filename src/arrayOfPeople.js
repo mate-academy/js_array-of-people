@@ -38,22 +38,17 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const result = [...people];
-
-  result.filter(function(num) {
-    for (let i = 0; i < result.length; i++) {
-      for (let j = i + 1; j < result.length; j++) {
-        if (result[i] === result[j]) {
-          result.splice(i, 1);
-          result.splice((j - 1), 1);
-          i--;
-          j--;
-        }
+  for (let i = 0; i < people.length; i++) {
+    for (let j = i + 1; j < people.length; j++) {
+      if (people[i] === people[j]) {
+        people.splice(i, 1);
+        people.splice((j - 1), 1);
+        i--;
       }
     }
-  });
+  }
 
-  return result;
+  return people;
 }
 
 module.exports = arrayOfPeople;
