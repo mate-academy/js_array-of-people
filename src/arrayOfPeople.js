@@ -41,8 +41,10 @@ function arrayOfPeople(people) {
   const arr = [];
 
   for (const item of people) {
-    if (arr.includes(item)) {
-      arr.splice(arr.indexOf(item), 1);
+    const itemIndex = arr.indexOf(item);
+
+    if (itemIndex !== -1) {
+      arr.splice(itemIndex, 1);
     } else {
       arr.push(item);
     }
