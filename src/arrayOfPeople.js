@@ -38,11 +38,11 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
   const room = [];
   for (let i = 0; i < people.length; i++) {
-    if (room.includes(people[i])) {
-      room.splice(room.indexOf(people[i]), 1);
+    const personIndex = room.indexOf(people[i]);
+    if (personIndex >= 0) {
+      room.splice(personIndex, 1);
     } else {
       room.push(people[i]);
     }
