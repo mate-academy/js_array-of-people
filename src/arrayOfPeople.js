@@ -14,7 +14,7 @@
  * room at that point.
  *
  * For instance, if the input array is [1, 3, 2, 1, 2, 1], it means that the
- * following has occurred:
+ **-+- following has occurred:
  *
  * — person 1 entered the room;
  * — person 3 entered the room;
@@ -38,7 +38,13 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  const room = [];
+
+  people.map(
+    x => room.includes(x) ? room.splice(room.indexOf(x), 1) : room.push(x)
+  );
+
+  return room;
 }
 
 module.exports = arrayOfPeople;
