@@ -38,7 +38,26 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  const peopleHere = people.filter(function(unicPerson) {
+    if (people.filter(function(person) {
+      if (person === unicPerson) {
+        return true;
+      }
+      return false;
+    }).length % 2 > 0) {
+      return true;
+    }
+    return false;
+  });
+
+  const fileterdPeople = [];
+  for (let i = peopleHere.length - 1; i > -1; i--) {
+    if (!fileterdPeople.includes(peopleHere[i])) {
+      fileterdPeople.push(peopleHere[i]);
+    };
+  }
+
+  return fileterdPeople.reverse();
 }
 
 module.exports = arrayOfPeople;
