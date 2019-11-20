@@ -42,11 +42,10 @@ function arrayOfPeople(people) {
     if (!prev.includes(current)) {
       prev.push(current);
       return prev;
-    } else if (prev.includes(current)) {
+    } else {
       prev.splice(prev.indexOf(current), 1);
       return prev;
     }
-    return prev;
   }, []);
 }
 
