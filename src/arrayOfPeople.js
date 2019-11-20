@@ -40,7 +40,7 @@
 function arrayOfPeople(people) {
   const room = [];
 
-  people.map(
+  people.forEach(
     x => room.includes(x) ? room.splice(room.indexOf(x), 1) : room.push(x)
   );
 
