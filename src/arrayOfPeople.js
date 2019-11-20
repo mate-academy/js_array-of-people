@@ -40,21 +40,11 @@
 function arrayOfPeople(people) {
   const result = [];
 
-  for (let i = people.length - 1; i >= 0; i--) {
-    let counter = 1;
-
-    for (let j = i; j >= 0; j--) {
-      if (j === i) {
-        continue;
-      } if (people[i] === people[j]) {
-        counter++;
-        people.splice(j, 1);
-        i--;
-      }
-    }
-
-    if (counter % 2 === 1) {
-      result.unshift(people[i]);
+  for (let i = 0; i < people.length; i++) {
+    if (result.includes(people[i])) {
+      result.splice(result.indexOf(people[i]), 1);
+    } else {
+      result.push(people[i]);
     }
   }
 
