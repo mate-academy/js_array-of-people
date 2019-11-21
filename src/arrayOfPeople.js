@@ -43,7 +43,7 @@ function arrayOfPeople(people) {
     const a = people[i];
     if (!result.includes(a)) {
       result.push(a);
-    } else if (result.includes(a)) {
+    } else {
       const elem = result.indexOf(a);
       result.splice(elem, 1);
     }
