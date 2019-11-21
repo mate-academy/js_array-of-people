@@ -38,13 +38,13 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const setOfAllPeople = new Set();
+  const arrayOfAllPeople = [];
   for (let i = 0; i < people.length; i++) {
-    if (setOfAllPeople.has(people[i])) {
-      setOfAllPeople.delete(people[i]);
-    } else { setOfAllPeople.add(people[i]); }
+    if (arrayOfAllPeople.indexOf(people[i]) > -1) {
+      arrayOfAllPeople.splice(arrayOfAllPeople.indexOf(people[i]), 1);
+    } else { arrayOfAllPeople.push(people[i]); }
   }
-  return [...setOfAllPeople];
+  return arrayOfAllPeople;
 }
 
 module.exports = arrayOfPeople;
