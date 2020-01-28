@@ -39,6 +39,14 @@
  */
 function arrayOfPeople(people) {
   // write code here
+  const currentlyInRoom = [];
+
+  people.forEach(function(person) {
+    currentlyInRoom.includes(person)
+      ? currentlyInRoom.splice(currentlyInRoom.indexOf(person), 1)
+      : currentlyInRoom.push(person);
+  });
+  return currentlyInRoom;
 }
 
 module.exports = arrayOfPeople;
