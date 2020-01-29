@@ -40,13 +40,13 @@
 function arrayOfPeople(people) {
   const result = [];
 
-  for (let i = 0; i < people.length; i++) {
-    if (result.includes(people[i])) {
-      result.splice(result.indexOf(people[i]), 1);
+  people.forEach((item, i, arr) => {
+    if (result.includes(item)) {
+      result.splice(result.indexOf(item), 1);
     } else {
-      result.push(people[i]);
+      result.push(item);
     }
-  }
+  });
 
   return result;
 }
