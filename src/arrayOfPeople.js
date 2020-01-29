@@ -38,7 +38,15 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  let peopleInRoom = [];
+
+  people.forEach(person => {
+    peopleInRoom.includes(person)
+      ? peopleInRoom = peopleInRoom.filter(man => man !== person)
+      : peopleInRoom.push(person);
+  });
+
+  return peopleInRoom;
 }
 
 module.exports = arrayOfPeople;
