@@ -40,11 +40,11 @@
 function arrayOfPeople(people) {
   const enteredPeople = [];
 
-  people.forEach(key => {
-    if (enteredPeople.includes(key)) {
-      enteredPeople.splice(enteredPeople.indexOf(key), 1);
+  people.forEach(person => {
+    if (enteredPeople.includes(person)) {
+      enteredPeople.splice(enteredPeople.indexOf(person), 1);
     } else {
-      enteredPeople.push(key);
+      enteredPeople.push(person);
     }
   });
 
