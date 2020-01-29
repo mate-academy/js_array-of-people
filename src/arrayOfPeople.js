@@ -39,13 +39,13 @@
  */
 
 function arrayOfPeople(people) {
-  const res = [];
+  const result = [];
 
-  people.forEach(item => res.includes(item)
-    ? res.splice(res.findIndex(el => item === el), 1)
-    : res.push(item));
+  people.forEach(item => result.includes(item)
+    ? result.splice(result.findIndex(el => item === el), 1)
+    : result.push(item));
 
-  return res;
+  return result;
 }
 
 module.exports = arrayOfPeople;
