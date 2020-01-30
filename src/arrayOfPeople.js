@@ -38,7 +38,22 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  const result = people.filter(item => {
+    let count = 0;
+
+    people.forEach(number => {
+      if (number === item) {
+        count++;
+      }
+    });
+
+    return (count % 2) !== 0;
+  });
+
+  const resultReverse = result.reverse();
+  const uniquePeople = [...(new Set(resultReverse))].reverse();
+
+  return uniquePeople;
 }
 
 module.exports = arrayOfPeople;
