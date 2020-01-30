@@ -38,22 +38,17 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const result = people.filter(item => {
-    let count = 0;
+  const peopleInRoom = [];
 
-    people.forEach(number => {
-      if (number === item) {
-        count++;
-      }
-    });
-
-    return (count % 2) !== 0;
+  people.forEach(person => {
+    if (!peopleInRoom.includes(person)) {
+      peopleInRoom.push(person);
+    } else {
+      peopleInRoom.splice(peopleInRoom.indexOf(person), 1);
+    }
   });
 
-  const resultReverse = result.reverse();
-  const uniquePeople = [...(new Set(resultReverse))].reverse();
-
-  return uniquePeople;
+  return peopleInRoom;
 }
 
 module.exports = arrayOfPeople;
