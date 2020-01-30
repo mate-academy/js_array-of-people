@@ -43,8 +43,7 @@ function arrayOfPeople(people) {
   people.forEach(item => {
     arr.includes(item) ? arr.splice((arr.findIndex(a => a === item)), 1)
       : arr.push(item);
-  }
-  );
+  });
 
   return arr;
 }
