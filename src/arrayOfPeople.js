@@ -40,12 +40,10 @@
 function arrayOfPeople(people) {
   const room = [];
 
-  people.map(person => {
-    if (room.indexOf(person) === -1) {
-      room.push(person);
-    } else {
-      room.splice(room.indexOf(person), 1);
-    }
+  people.forEach(person => {
+    const personIndex = room.indexOf(person);
+
+    personIndex === -1 ? room.push(person) : room.splice(personIndex, 1);
   });
 
   return room;
