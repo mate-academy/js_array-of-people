@@ -41,12 +41,12 @@ function arrayOfPeople(people) {
   const room = [];
 
   const movingPeople = function(person, index, arr) {
-    const i = room.findIndex(item => item === person);
+    const indexPersonInRoom = room.findIndex(item => item === person);
 
-    if (i < 0) {
+    if (indexPersonInRoom < 0) {
       room.push(person);
     } else {
-      room.splice(i, 1);
+      room.splice(indexPersonInRoom, 1);
     }
   };
 
