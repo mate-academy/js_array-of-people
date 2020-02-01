@@ -37,20 +37,17 @@
  *
  * @return {number[]}
  */
+
 function arrayOfPeople(people) {
   const arrResult = [];
 
-  for (let i = 0; i < people.length; i++) {
-    if (arrResult.indexOf(people[i]) !== -1) {
-      delete arrResult[arrResult.indexOf(people[i])];
-    } else {
-      arrResult[i] = people[i];
-    }
-  }
-
-  return arrResult.filter(function(element) {
-    return element != null;
+  people.forEach((item, i) => {
+    (arrResult.indexOf(item) !== -1)
+      ? arrResult.splice(arrResult.indexOf(item), 1)
+      : arrResult[i] = item;
   });
+
+  return arrResult.filter(element => element);
 }
 
 module.exports = arrayOfPeople;
