@@ -37,8 +37,30 @@
  *
  * @return {number[]}
  */
+// function arrayOfPeople2(people) {
+//   const arr = [];
+
+//   people.forEach(human => {
+//     if (arr.includes(human)) {
+//       arr.splice(arr.indexOf(human), 1);
+//     }
+//     else {
+//       arr.push(human);
+//     }
+//   });
+
+//   return arr;
+// }
 function arrayOfPeople(people) {
-  // write code here
+  return people.reduce((room, person) => {
+    if (room.includes(person)) {
+      room.splice(room.indexOf(person), 1);
+    } else {
+      room.push(person);
+    }
+
+    return room;
+  }, []);
 }
 
 module.exports = arrayOfPeople;
