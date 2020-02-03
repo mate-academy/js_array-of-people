@@ -39,8 +39,10 @@
  */
 function arrayOfPeople(people) {
   return people.reduce((room, person) => {
+    const id = room.indexOf(person);
+
     if (room.includes(person)) {
-      room.splice(room.indexOf(person), 1);
+      room.splice(id, 1);
     } else {
       room.push(person);
     }
