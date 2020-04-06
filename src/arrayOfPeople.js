@@ -38,22 +38,23 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const res = [];
-  const arr = [];
+  const stayInRoom = [];
+  const wasInRoom = [];
 
   for (let i = people.length - 1; i >= 0; i--) {
-    if (!arr.includes(people[i])) {
-      arr.push(people[i]);
+    if (!wasInRoom.includes(people[i])) {
+      wasInRoom.push(people[i]);
     }
   }
 
-  for (let i = 0; i < arr.length; i++) {
-    if (people.filter((el1) => (el1 === arr[i])).length % 2 !== 0) {
-      res.push(arr[i]);
+  for (let i = 0; i < wasInRoom.length; i++) {
+    if (people.filter((leftRoom) =>
+      (leftRoom === wasInRoom[i])).length % 2 !== 0) {
+      stayInRoom.push(wasInRoom[i]);
     }
   }
 
-  return res.reverse();
+  return stayInRoom.reverse();
 }
 
 module.exports = arrayOfPeople;
