@@ -39,6 +39,24 @@
  */
 function arrayOfPeople(people) {
   // write code here
+  const arr = [];
+  const m = [...people].reverse();
+  const z = [...people].sort().map((el, i, array) => {
+    if (array[i] === array[i + 1]) {
+      array[i] = undefined;
+      array[i + 1] = undefined;
+    } else {
+      return el;
+    }
+  });
+
+  for (const el of m) {
+    if (z.includes(el) && !arr.includes(el) && el !== undefined) {
+      arr.unshift(el);
+    }
+  }
+
+  return arr;
 }
 
 module.exports = arrayOfPeople;
