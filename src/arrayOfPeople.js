@@ -39,6 +39,29 @@
  */
 function arrayOfPeople(people) {
   // write code here
+  let stats = getPeopleStatistics(people);
+
+  return stats
+    .filter(c => c.isInside)
+    .sort((p1, p2) => {
+      return p1.order > p2.order ? 1 : -1
+    })
+    .map(x => x.id);
 }
 
+function getPeopleStatistics(people) {
+  let statistics = [];
+  for (let i in people) {
+    if (!statistics.find(p => p && p.id === people[i]))
+      statistics.push({ id: people[i], isInside: true, order: +i });
+    else {
+      let person = statistics.find(p => p && p.id === people[i]);
+
+      person.isInside = !person.isInside;
+      if (person.isInside)
+        person.order = +i;
+    }
+  }
+  return statistics;
+}
 module.exports = arrayOfPeople;
