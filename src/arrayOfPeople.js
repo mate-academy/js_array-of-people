@@ -40,15 +40,10 @@
 function arrayOfPeople(people) {
   const result = [];
 
-  for (const man of people) {
-    const i = result.indexOf(man);
-
-    if (result.includes(man)) {
-      result.splice(i, 1);
-    } else {
-      result.push(man);
-    }
-  }
+  people.map(
+    man => result.includes(man)
+      ? result.splice(result.indexOf(man), 1)
+      : result.push(man));
 
   return result;
 }
