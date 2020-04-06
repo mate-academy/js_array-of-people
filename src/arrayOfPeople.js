@@ -40,7 +40,7 @@
 function arrayOfPeople(people) {
   const arr = [];
 
-  people.forEach(function(item) {
+  people.map(function(item) {
     const index = arr.indexOf(item);
 
     if (index === -1) {
