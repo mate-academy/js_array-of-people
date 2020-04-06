@@ -35,10 +35,21 @@
  *
  * @param {number[]} people
  *
- * @return {number[]}
+ * @return {[][]}
  */
 function arrayOfPeople(people) {
   // write code here
+  const arr = [];
+
+  people.map(person => {
+    if (!arr.includes(person)) {
+      arr.push(person);
+    } else {
+      arr.splice(arr.indexOf(person), 1);
+    }
+  });
+
+  return arr;
 }
 
 module.exports = arrayOfPeople;
