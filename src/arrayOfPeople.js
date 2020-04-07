@@ -39,17 +39,6 @@
  */
 function arrayOfPeople(people) {
   // write code here
-  let stats = getPeopleStatistics(people);
-
-  return stats
-    .filter(c => c.isInside)
-    .sort((p1, p2) => {
-      return p1.order > p2.order ? 1 : -1
-    })
-    .map(x => x.id);
-}
-
-function getPeopleStatistics(people) {
   let arr = [];
 
   people.forEach(function (person) {
