@@ -40,10 +40,10 @@
 function arrayOfPeople(people) {
   const room = [];
 
-  people.map(person => {
+  people.forEach(person => {
     const personIndex = room.indexOf(person);
 
-    if (personIndex === -1) {
+    if (!(room.includes(person))) {
       room.push(person);
     } else {
       room.splice(personIndex, 1);
