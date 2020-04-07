@@ -43,7 +43,7 @@ function arrayOfPeople(people) {
       .lastIndexOf(person) === i);
   const stayInRoom = wasInRoom
     .filter(stayInRoomPerson => ((people
-      .filter(el => el === stayInRoomPerson)).length % 2 !== 0));
+      .filter(person => person === stayInRoomPerson)).length % 2 !== 0));
 
   return stayInRoom;
 }
