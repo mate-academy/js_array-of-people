@@ -40,7 +40,7 @@
 function arrayOfPeople(people) {
   const inRoom = [];
 
-  people.filter(person => {
+  people.forEach(person => {
     if (inRoom.includes(person)) {
       inRoom.splice(inRoom.indexOf(person), 1);
     } else {
