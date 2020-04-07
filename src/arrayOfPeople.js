@@ -38,23 +38,14 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const stayInRoom = [];
-  const wasInRoom = [];
+  const wasInRoom = people
+    .filter((person, i, arr) => arr
+      .lastIndexOf(person) === i);
+  const stayInRoom = wasInRoom
+    .filter(stayInRoomPerson => ((people
+      .filter(el => el === stayInRoomPerson)).length % 2 !== 0));
 
-  for (let i = people.length - 1; i >= 0; i--) {
-    if (!wasInRoom.includes(people[i])) {
-      wasInRoom.push(people[i]);
-    }
-  }
-
-  for (let i = 0; i < wasInRoom.length; i++) {
-    if (people.filter((leftRoom) =>
-      (leftRoom === wasInRoom[i])).length % 2 !== 0) {
-      stayInRoom.push(wasInRoom[i]);
-    }
-  }
-
-  return stayInRoom.reverse();
+  return stayInRoom;
 }
 
 module.exports = arrayOfPeople;
