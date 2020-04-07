@@ -52,6 +52,4 @@ function arrayOfPeople(people) {
   return inRoom;
 }
 
-arrayOfPeople([3, 2, 5, 4, 1]);
-
 module.exports = arrayOfPeople;
