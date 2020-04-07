@@ -50,18 +50,16 @@ function arrayOfPeople(people) {
 }
 
 function getPeopleStatistics(people) {
-  let statistics = [];
-  for (let i in people) {
-    if (!statistics.find(p => p && p.id === people[i]))
-      statistics.push({ id: people[i], isInside: true, order: +i });
-    else {
-      let person = statistics.find(p => p && p.id === people[i]);
+  let arr = [];
 
-      person.isInside = !person.isInside;
-      if (person.isInside)
-        person.order = +i;
+  people.forEach(function (person) {
+    if (!arr.includes(person)) {
+      arr.push(person);
+    } else {
+      arr = arr.filter(item => item !== person);
     }
-  }
-  return statistics;
+  });
+
+  return arr;
 }
 module.exports = arrayOfPeople;
