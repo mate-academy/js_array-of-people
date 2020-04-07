@@ -38,14 +38,14 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const wasInRoom = people
-    .filter((person, i, arr) => arr
-      .lastIndexOf(person) === i);
-  const stayInRoom = wasInRoom
-    .filter(stayInRoomPerson => ((people
-      .filter(person => person === stayInRoomPerson)).length % 2 !== 0));
+  const result = [];
 
-  return stayInRoom;
+  people.forEach(element => result.includes(element)
+    ? result.splice(result.indexOf(element), 1)
+    : result.push(element)
+  );
+
+  return result;
 }
 
 module.exports = arrayOfPeople;
