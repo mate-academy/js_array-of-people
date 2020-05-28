@@ -38,7 +38,7 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  let temp = [];
+  const temp = [];
 
   people.forEach((item) => {
     if (temp.includes(item)) {
@@ -47,6 +47,7 @@ function arrayOfPeople(people) {
       temp.push(item);
     }
   });
+
   return temp;
 }
 
