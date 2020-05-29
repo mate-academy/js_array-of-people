@@ -38,16 +38,16 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  let temp = [];
+  const peopleInTheRoom = [];
 
-  people.forEach((item) => {
-    if (temp.includes(item)) {
-      temp.splice(temp.indexOf(item), 1);
-    } else {
-      temp.push(item);
-    }
-  });
-  return temp;
+  for (let i = 0; i < people.length; i++) {
+    (!peopleInTheRoom.includes(people[i]))
+      ? peopleInTheRoom.push(people[i])
+      : peopleInTheRoom.splice(peopleInTheRoom.findIndex(
+        (element) => element === people[i]), 1);
+  }
+
+  return peopleInTheRoom;
 }
 
 module.exports = arrayOfPeople;
