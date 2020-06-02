@@ -38,14 +38,14 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const insidePeople = [];
+  const peopleInside = [];
 
-  people.forEach(person => insidePeople.includes(person)
-    ? insidePeople.splice(insidePeople.indexOf(person), 1)
-    : insidePeople.push(person)
+  people.forEach(person => peopleInside.includes(person)
+    ? peopleInside.splice(peopleInside.indexOf(person), 1)
+    : peopleInside.push(person)
   );
 
-  return insidePeople;
+  return peopleInside;
 }
 
 module.exports = arrayOfPeople;
