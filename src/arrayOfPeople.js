@@ -53,6 +53,4 @@ function arrayOfPeople(people) {
   return room;
 }
 
-// console.log(arrayOfPeople([23, 23, 23, 23]));
-
 module.exports = arrayOfPeople;
