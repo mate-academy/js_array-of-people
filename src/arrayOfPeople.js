@@ -37,8 +37,19 @@
  *
  * @return {number[]}
  */
+
 function arrayOfPeople(people) {
-  // write code here
+  return people.reduce((accumulator, item) => {
+    const index = accumulator.indexOf(item);
+
+    if (index >= 0) {
+      accumulator.splice(index, 1);
+    } else {
+      accumulator.push(item);
+    }
+
+    return accumulator;
+  }, []);
 }
 
 module.exports = arrayOfPeople;
