@@ -43,12 +43,16 @@ function arrayOfPeople(people) {
   people.forEach(person => {
     const i = room.indexOf(person);
 
-    if (i > 0) {
-      room.slice(i, 1);
+    if (i >= 0) {
+      room.splice(i, 1);
+    } else {
+      room.push(person);
     }
-
-    room.push(person);
   });
+
+  return room;
 }
+
+// console.log(arrayOfPeople([23, 23, 23, 23]));
 
 module.exports = arrayOfPeople;
