@@ -1,5 +1,8 @@
 {
-  "name": "array-of-people",
+  "jest": {
+  "testEnvironment": "node"
+  },
+  "name": "array-method-push",
   "version": "1.0.0",
   "description": "Array of people",
   "scripts": {
