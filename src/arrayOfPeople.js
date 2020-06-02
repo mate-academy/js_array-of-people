@@ -38,7 +38,11 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  const compare = (person, index, array) =>
+    array.filter(item => item === person).length % 2 !== 0
+    && array.lastIndexOf(person) === index;
+
+  return people.filter(compare);
 }
 
 module.exports = arrayOfPeople;
