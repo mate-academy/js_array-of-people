@@ -38,7 +38,22 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  const facecheck = {};
+  const room = [];
+
+  people.forEach((person) => {
+    if (`+${person}` in facecheck) {
+      delete facecheck[`+${person}`];
+    } else {
+      facecheck[`+${person}`] = 1;
+    }
+  });
+
+  for (const prop in facecheck) {
+    room.push(+prop);
+  }
+
+  return room;
 }
 
 module.exports = arrayOfPeople;
