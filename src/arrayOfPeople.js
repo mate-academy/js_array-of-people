@@ -38,7 +38,14 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  for (let i = 0; i < people.length; i++) {
+    if (people.indexOf(people[i]) !== i) {
+      delete people[people.indexOf(people[i])];
+      delete people[i];
+    }
+  }
+
+  return people.filter(x => x !== undefined);
 }
 
 module.exports = arrayOfPeople;
