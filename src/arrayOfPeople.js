@@ -38,19 +38,22 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const playRoom = [];
+  const playRoom = {};
+  const restPlayers = [];
 
   people.forEach(player => {
-    const playerNumber = playRoom.indexOf(player);
-
-    if (playerNumber < 0) {
-      playRoom.push(player);
+    if (`+${player}` in playRoom) {
+      delete playRoom[`+${player}`];
     } else {
-      playRoom.splice(playerNumber, 1);
+      playRoom[`+${player}`] = 1;
     }
   });
 
-  return playRoom;
+  for (const key in playRoom) {
+    restPlayers.push(+key);
+  }
+
+  return restPlayers;
 }
 
 module.exports = arrayOfPeople;
