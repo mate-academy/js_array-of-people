@@ -1,5 +1,5 @@
 'use strict';
-
+/* eslint-disable */
 /**
  * Implement arrayOfPeople function:
  *
@@ -38,7 +38,13 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+
+  const callback = (unit) => {
+    return unit % 2 === 1;
+  };
+
+  return [ ...new Set(people.filter(callback))];
 }
 
 module.exports = arrayOfPeople;
+// console.log(arrayOfPeople([1, 3, 2, 1, 2, 1]));
