@@ -38,7 +38,13 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  const inRoom = [];
+
+  people.forEach((i) => {
+    inRoom.includes(i) ? inRoom.splice(inRoom.indexOf(i), 1) : inRoom.push(i);
+  });
+
+  return inRoom;
 }
 
 module.exports = arrayOfPeople;
