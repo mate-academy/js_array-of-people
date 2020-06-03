@@ -38,7 +38,16 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  const peopleCopy = [...people];
+
+  for (let i = 0; i < peopleCopy.length; i++) {
+    if (peopleCopy.indexOf(peopleCopy[i]) !== i) {
+      delete peopleCopy[peopleCopy.indexOf(peopleCopy[i])];
+      delete peopleCopy[i];
+    }
+  }
+
+  return peopleCopy.filter(x => x !== undefined);
 }
 
 module.exports = arrayOfPeople;
