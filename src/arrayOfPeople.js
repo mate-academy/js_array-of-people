@@ -38,14 +38,16 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  for (let i = 0; i < people.length; i++) {
-    if (people.indexOf(people[i]) !== i) {
-      delete people[people.indexOf(people[i])];
-      delete people[i];
+  const peopleCopy = [...people];
+
+  for (let i = 0; i < peopleCopy.length; i++) {
+    if (peopleCopy.indexOf(peopleCopy[i]) !== i) {
+      delete peopleCopy[peopleCopy.indexOf(peopleCopy[i])];
+      delete peopleCopy[i];
     }
   }
 
-  return people.filter(x => x !== undefined);
+  return peopleCopy.filter(x => x !== undefined);
 }
 
 module.exports = arrayOfPeople;
