@@ -38,18 +38,17 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  const res = [];
-  const l = people.length - 1;
+  const peopleInRoom = [];
 
-  for (let i = l; i >= 0; i--) {
-    const accum = people.filter(item => item === people[i]).length;
+  for (let i = people.length - 1; i >= 0; i--) {
+    const numberOfEntered = people.filter(item => item === people[i]).length;
 
-    if (accum % 2 === 1 && !res.includes(people[i])) {
-      res.unshift(people[i]);
+    if (numberOfEntered % 2 === 1 && !peopleInRoom.includes(people[i])) {
+      peopleInRoom.unshift(people[i]);
     }
   }
 
-  return res;
+  return peopleInRoom;
 }
 
 module.exports = arrayOfPeople;
