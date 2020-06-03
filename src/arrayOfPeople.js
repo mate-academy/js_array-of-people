@@ -38,14 +38,13 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  let accum;
   const res = [];
   const l = people.length - 1;
 
   for (let i = l; i >= 0; i--) {
-    accum = people.filter(item => item === people[i]).length;
+    const accum = people.filter(item => item === people[i]).length;
 
-    if (accum % 2 === 1 && res.includes(people[i]) === false) {
+    if (accum % 2 === 1 && !res.includes(people[i])) {
       res.unshift(people[i]);
     }
   }
