@@ -37,8 +37,17 @@
  *
  * @return {number[]}
  */
-function arrayOfPeople(people) {
-  // write code here
-}
 
+function arrayOfPeople(people) {
+  const uniquePeople = people.reduce((arrayOfPeople, person) => {
+    if (arrayOfPeople.includes(person)) {
+      arrayOfPeople.splice(arrayOfPeople.indexOf(person), 1);
+      return arrayOfPeople;
+    } else if (arrayOfPeople.indexOf(person) === -1) {
+      arrayOfPeople.push(person);
+    }
+    return arrayOfPeople;
+  }, []);
+  return uniquePeople;
+}
 module.exports = arrayOfPeople;
