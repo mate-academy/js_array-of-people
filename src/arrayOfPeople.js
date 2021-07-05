@@ -38,7 +38,17 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  let arr = [];
+  
+  people.forEach(function (person) {
+    if (!arr.includes(person)) {
+      arr.push(person);
+    } else {
+      arr = arr.filter(item => item !== person);
+    }
+  });
+
+  return arr;
 }
 
 module.exports = arrayOfPeople;
