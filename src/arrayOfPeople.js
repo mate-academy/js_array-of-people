@@ -39,6 +39,20 @@
  */
 function arrayOfPeople(people) {
   // write code here
+  const inRoom = [];
+
+  people.forEach((person) => {
+    const placeOfElement = inRoom.indexOf(person);
+
+    if (placeOfElement >= 0) {
+      inRoom.splice(placeOfElement, 1);
+    } else {
+      inRoom.push(person);
+    }
+  });
+  return inRoom;
 }
+
+// arrayOfPeople([23, 23, 23]))
 
 module.exports = arrayOfPeople;
