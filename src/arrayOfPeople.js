@@ -39,6 +39,15 @@
  */
 function arrayOfPeople(people) {
   // write code here
+  const club = [];
+
+  people.map(el => {
+    return club.includes(el)
+      ? club.splice(club.findIndex(a => el === a), 1)
+      : club.push(el);
+  });
+
+  return club;
 }
 
 module.exports = arrayOfPeople;
