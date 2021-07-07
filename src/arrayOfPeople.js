@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * Implement arrayOfPeople function:
  *
@@ -37,8 +36,16 @@
  *
  * @return {number[]}
  */
-function arrayOfPeople(people) {
-  // write code here
-}
-
+const arrayOfPeople = (people) => {
+  const peopleInside = [];
+  people.forEach((elem, i) => {
+    const presence = peopleInside.indexOf(people[i]);
+    if (presence === -1) {
+      peopleInside.push(people[i]);
+    } else {
+      peopleInside.splice(presence, 1);
+    }
+  });
+  return peopleInside;
+};
 module.exports = arrayOfPeople;
