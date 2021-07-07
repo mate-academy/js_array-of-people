@@ -39,6 +39,10 @@
  */
 function arrayOfPeople(people) {
   // write code here
+  const insiders = new Set();
+  people.forEach(person => insiders.has(person)
+    ? insiders.delete(person) : insiders.add(person));
+  return [...insiders];
 }
 
 module.exports = arrayOfPeople;
