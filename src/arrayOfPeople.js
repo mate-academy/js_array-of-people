@@ -39,6 +39,20 @@
  */
 function arrayOfPeople(people) {
   // write code here
+  return people.reduceRight(
+    (inRoom, person, personIndex, persons) => {
+      if (!inRoom.find(someone => someone === person)) {
+        const personsInOuting = persons.filter(
+          someone => someone === person
+        ).length;
+        if (personsInOuting % 2 === 1) {
+          return [person, ...inRoom];
+        }
+      }
+      return inRoom;
+    },
+    []
+  );
 }
 
 module.exports = arrayOfPeople;
