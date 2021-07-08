@@ -38,7 +38,18 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
-}
+  let newArr = [ ...people ];
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr.indexOf(newArr[i], i + 1) >= 0) {
+      newArr.splice((newArr.indexOf(newArr[i], i + 1)), 1, 'x');
+      newArr.splice(i, 1, 'x');
+    }
+  }
 
+  newArr = newArr.filter(item => item !== 'x');
+
+  return newArr;
+}
 module.exports = arrayOfPeople;
+
+// console.log(arrayOfPeople([11, 11, 11, 11,]));
