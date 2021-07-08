@@ -39,6 +39,16 @@
  */
 function arrayOfPeople(people) {
   // write code here
+  const resultSet = people.reduce(function(prev, curr) {
+    if (!prev.has(curr)) {
+      prev.add(curr);
+    } else {
+      prev.delete(curr);
+    }
+    return prev;
+  }, new Set());
+
+  return [...resultSet];
 }
 
 module.exports = arrayOfPeople;
