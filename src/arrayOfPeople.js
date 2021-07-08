@@ -38,7 +38,17 @@
  * @return {number[]}
  */
 function arrayOfPeople(people) {
-  // write code here
+  for (let i = 0; i < people.length; i++) {
+    for (let j = i + 1; j < people.length; j++) {
+      if (people[i] === people[j]) {
+        people.splice(i, 1);
+        people.splice((j - 1), 1);
+        i--;
+      }
+    }
+  }
+
+  return people;
 }
 
 module.exports = arrayOfPeople;
